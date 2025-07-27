@@ -1,0 +1,19 @@
+من twilio.rest استورد Client
+
+# استبدل بمعلومات حسابك على Twilio
+account_sid = 'معرف الحساب'
+auth_token = 'رمز المصادقة'
+client = Client(account_sid, auth_token)
+
+# استبدل برقم هاتفك و رقم هاتف المتلقي
+from_number = 'رقم هاتفك على Twilio'
+to_number = 'رقم هاتف المتلقي'
+
+# إرسال رسالة
+message = client.messages.create(
+    body='مرحبًا!',
+    from_=from_number,
+    to=to_number
+)
+
+print(message.sid)
